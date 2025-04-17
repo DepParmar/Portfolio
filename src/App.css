@@ -1,0 +1,20 @@
+.glowing-logo {
+  filter: drop-shadow(0 0 5px #670202) 
+          drop-shadow(0 0 10px #640202)
+          drop-shadow(0 0 8px #6f0202) 
+          drop-shadow(0 0 15px #5b0202);
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    filter: drop-shadow(0 0 5px #650202) 
+            drop-shadow(0 0 8px #5c0202);
+  }
+  to {
+    filter: drop-shadow(0 0 8px #650202) 
+            drop-shadow(0 0 5px #5b0303)
+            drop-shadow(0 0 10px #580202)  
+            drop-shadow(0 0 15px #3f0101);
+  }
+}
