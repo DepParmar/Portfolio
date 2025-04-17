@@ -1,0 +1,87 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Blood Red & Black Theme */
+@layer base {
+  :root {
+    --color-primary: 136 19 19;  /* Blood Red */
+    --color-secondary: 0 0 0;    /* Pure Black */
+    --color-accent: 239 68 68;   /* Brighter Red for accents */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-gray-100;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[rgb(var(--color-primary))]/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[rgb(var(--color-primary))];
+  }
+
+  /* Custom Typography */
+  h1, h2, h3, h4 {
+    @apply font-bold text-white;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+    @apply bg-gradient-to-r from-[rgb(var(--color-primary))] to-[rgb(var(--color-accent))] bg-clip-text text-transparent;
+  }
+
+  /* Custom Components */
+  .card {
+    @apply bg-gray-900/80 border border-[rgb(var(--color-primary))]/20 backdrop-blur-sm;
+    @apply hover:border-[rgb(var(--color-primary))]/50 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-[rgb(var(--color-primary))] text-white px-6 py-2 rounded-lg;
+    @apply hover:bg-[rgb(var(--color-accent))] transition-colors;
+  }
+}
+
+/* Animation Effects */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(var(--color-primary), 0.5);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 15px rgba(var(--color-primary), 0.7);
+  }
+
+  .pulse-animate {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
